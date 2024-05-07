@@ -2,20 +2,28 @@ import turtle as t
 import random
 
 tim = t.Turtle()
+t.colormode(255)
 
-########### Challenge 3 - Draw Shapes ########
 
-colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+def r_colour():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    rand_colour = (r, g, b)
+    return rand_colour
 
-def draw(num_sides):
-    angle = 360 / num_sides
-    for _ in range(num_sides):
-        tim.forward(100)
-        tim.right(angle)
 
-for side_n in range(3, 10):
-    tim.color(random.choice(colours))
-    draw(side_n)
+tim.speed("fastest")
+
+
+def draw(gap):
+    for _ in range(int(360 / gap)):
+        tim.color(r_colour())
+        tim.circle(100)
+        tim.setheading(tim.heading() + gap)
+
+
+draw(5)
 
 screen = t.Screen()
 screen.exitonclick()
