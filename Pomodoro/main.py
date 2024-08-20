@@ -30,8 +30,8 @@ def start_timer():
     global REPS
     REPS += 1
 
-    work_sec = WORK_MIN * 60
-    short_break = SHORT_BREAK_MIN * 60
+    work_sec = WORK_MIN*60
+    short_break = math.floor(WORK_MIN % 60)
     long_break = LONG_BREAK_MIN * 60
 
     if REPS % 8 == 0:

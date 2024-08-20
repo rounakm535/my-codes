@@ -15,7 +15,7 @@ state_name = data.state.to_list()
 
 gussed_state = []
 
-while len(gussed_state) < 50 :
+while len(gussed_state) < 50:
 
     answer = screen.textinput(title=f"{len(gussed_state)}/50. Guess the State",
                               prompt="What's the another State Name??").title()
