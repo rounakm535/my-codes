@@ -75,6 +75,7 @@ def find_password():
         else:
             messagebox.showinfo(title="Error", message="No such data found")
 
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -111,6 +112,5 @@ add_button = Button(text="Add", width=36, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
 search_button = Button(text="Search", width=15, command=find_password)
 search_button.grid(row=1, column=2, columnspan=2)
-
 
 window.mainloop()
