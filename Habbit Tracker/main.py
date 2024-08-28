@@ -31,15 +31,27 @@ headers = {
 # response = requests.post(url=graph_endpoint, json=graph_config, headers=headers)
 # print(response.text)
 
-pixel_endpoint = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}"
 
 today = datetime.now()
+data = today.strftime("%Y%m%d")
+
+pixel_endpoint = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}"
+
 
 pixel_config = {
 
-    "date": today.strftime("%Y%m%d"),
-    "quantity": "25",
+    "date": data,
+    "quantity": "13",
 }
 
-response = requests.post(url=pixel_endpoint, json=pixel_config,headers=headers)
+# response = requests.post(url=pixel_endpoint, json=pixel_config,headers=headers)
+# print(response.text)
+
+update_config = {
+    "quantity": "13",
+}
+
+pixel_update_endpoint = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}/{data}"
+
+response = requests.put(url=pixel_update_endpoint, json=update_config, headers=headers)
 print(response.text)
