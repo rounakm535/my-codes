@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 USERNAME = "rounakm535"
 TOKEN = "isitanapikey"
@@ -32,9 +33,11 @@ headers = {
 
 pixel_endpoint = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}"
 
+today = datetime.now()
+
 pixel_config = {
 
-    "date": "20240825",
+    "date": today.strftime("%Y%m%d"),
     "quantity": "25",
 }
 
