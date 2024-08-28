@@ -1,5 +1,6 @@
 import requests
 from twilio.rest import Client
+import os
 
 api_key = "483b85d1157af3b2b013c6b8b8e10849"
 endpoint = "https://api.openweathermap.org/data/2.5/forecast?"
