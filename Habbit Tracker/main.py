@@ -48,7 +48,7 @@ pixel_config = {
 # print(response.text)
 
 update_config = {
-    "quantity": "13",
+    "quantity": "15",
 }
 
 pixel_update_endpoint = f"{PIXELA_ENDPOINT}/{USERNAME}/graphs/{GRAPH_ID}/{data}"
