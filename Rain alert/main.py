@@ -3,6 +3,7 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 import socket
 
+
 def check_internet_connection():
     try:
         # Try to resolve Google's DNS
@@ -10,6 +11,7 @@ def check_internet_connection():
         return True
     except OSError:
         return False
+
 
 # OpenWeatherMap configuration
 api_key = "483b85d1157af3b2b013c6b8b8e10849"
@@ -23,7 +25,7 @@ weather_params = {
 
 # Twilio configuration
 account_sid = 'AC8bc294ed3130da69d96031e047985739'
-auth_token = 'd34c285972f765bcd465a5325db1c942'
+auth_token = '43adaa7e7dcd5cf9b84a4bbc1202faf8'
 
 if not check_internet_connection():
     print("No internet connection. Please check your network settings.")
