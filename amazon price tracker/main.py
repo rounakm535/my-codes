@@ -5,7 +5,7 @@ import os
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env filelfkdsd;afldksh
+# Load environment variables from .env file
 load_dotenv()
 
 MY_EMAIL = "rounakmishra1508@gmail.com"
