@@ -3,11 +3,8 @@ import requests
 import smtplib
 import os
 import os
-from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
-
 MY_EMAIL = "rounakmishra1508@gmail.com"
 APP_PASSWORD = "ipjx pxdx qunb tvrm"
 
@@ -15,7 +12,7 @@ APP_PASSWORD = "ipjx pxdx qunb tvrm"
 # Practice
 # url = "https://appbrewery.github.io/instant_pot/"
 # Live Site
-url = "https://www.amazon.com/Instant-Pot-Multi-Use-Programmable-Pressure/dp/B00FLYWNYQ/ref=dp_fod_sccl_2/130-8117768-4452455"
+url = ("https://www.amazon.com/Instant-Pot-Multi-Use-Programmable-Pressure/dp/B00FLYWNYQ/ref=dp_fod_sccl_2/130-8117768-4452455")
 
 # ====================== Add Headers to the Request ===========================
 
