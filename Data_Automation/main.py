@@ -26,13 +26,13 @@ print(all_links)
 # Addresses to all the elements
 all_address_elements = soup.select(".StyledPropertyCardDataWrapper address")
 all_addresses = [address.get_text().replace(" | ", " ").strip() for address in all_address_elements]
-print(f"\n After having been cleaned up, the {len(all_addresses)} addresses now look like this: \n")
+print(f"\n After having been cleaned up, the {len(all_addresses)} addresses are: \n")
 print(all_addresses)
 
 # Price of all the elements
 all_price_elements = soup.select(".PropertyCardWrapper span")
 all_prices = [price.get_text().replace("/mo", "").split("+")[0] for price in all_price_elements if "$" in price.text]
-print(f"\n After having been cleaned up, the {len(all_prices)} prices now look like this: \n")
+print(f"\n After having been cleaned up, the {len(all_prices)} prices are: \n")
 print(all_prices)
 
 
