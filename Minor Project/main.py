@@ -19,7 +19,6 @@ class TwitterClient:
         access_token = 'AAAAAAAAAAAAAAAAAAAAAIypxQEAAAAAZgrWDuwCLnAFL5ouu%2FTtbdpBvGs%3DCEkBRi5mIQJxNk5UUnUNGsS8VIOwZm7V96Ib6vUZtut3IwV1om'
         access_token_secret = 'UjA8VPlENbZHI9Lhuu4aFykdE2orruofcAFyt7C3gzoEM'
 
-
         # Attempt authentication
         try:
             # Create OAuthHandler object
@@ -32,16 +31,16 @@ class TwitterClient:
             print(f"Error: Authentication Failed - {e}")
 
     def clean_tweet(self, tweet):
-        '''
+        """
         Utility function to clean tweet text by removing links, special characters,
         and usernames using regular expressions.
-        '''
+        """
         return ' '.join(re.sub(r"(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+:\/\/\S+)", " ", tweet).split())
 
     def get_tweet_sentiment(self, tweet):
-        '''
+        """
         Utility function to classify the sentiment of a tweet using TextBlob.
-        '''
+        """
         analysis = TextBlob(self.clean_tweet(tweet))
         # Determine sentiment
         if analysis.sentiment.polarity > 0:
@@ -52,9 +51,9 @@ class TwitterClient:
             return 'negative'
 
     def get_tweets(self, query, count=10):
-        '''
+        """
         Main function to fetch tweets and parse them.
-        '''
+        """
         tweets = []
 
         try:
@@ -95,7 +94,8 @@ def main():
     # Print sentiment analysis summary
     print(f"Positive tweets percentage: {100 * len(positive_tweets) / len(tweets):.2f}%")
     print(f"Negative tweets percentage: {100 * len(negative_tweets) / len(tweets):.2f}%")
-    print(f"Neutral tweets percentage: {100 * (len(tweets) - len(positive_tweets) - len(negative_tweets)) / len(tweets):.2f}%")
+    print(
+        f"Neutral tweets percentage: {100 * (len(tweets) - len(positive_tweets) - len(negative_tweets)) / len(tweets):.2f}%")
 
     # Print example positive tweets
     print("\nPositive tweets:")
