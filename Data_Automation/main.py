@@ -35,9 +35,8 @@ all_prices = [price.get_text().replace("/mo", "").split("+")[0] for price in all
 print(f"\n After having been cleaned up, the {len(all_prices)} prices are: \n")
 print(all_prices)
 
-
 #-------------------------------------------- SELENIUM USAGE ----------------------------------------------------
-
+ 
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_experimental_option("detach", True)

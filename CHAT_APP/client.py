@@ -17,13 +17,14 @@ SMALL_FONT = ("Helvetica", 13)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
+
 def add_message(message):
     message_box.config(state=tk.NORMAL)
     message_box.insert(tk.END, message + '\n')
     message_box.config(state=tk.DISABLED)
 
-def connect():
 
+def connect():
     # try except block
     try:
 
@@ -39,10 +40,11 @@ def connect():
     else:
         messagebox.showerror("Invalid username", "Username cannot be empty")
 
-    threading.Thread(target=listen_for_messages_from_server, args=(client, )).start()
+    threading.Thread(target=listen_for_messages_from_server, args=(client,)).start()
 
     username_textbox.config(state=tk.DISABLED)
     username_button.config(state=tk.DISABLED)
+
 
 def send_message():
     message = message_textbox.get()
@@ -51,6 +53,7 @@ def send_message():
         message_textbox.delete(0, len(message))
     else:
         messagebox.showerror("Empty message", "Message cannot be empty")
+
 
 root = tk.Tk()
 root.geometry("600x600")
@@ -91,7 +94,6 @@ message_box.pack(side=tk.TOP)
 
 
 def listen_for_messages_from_server(client):
-
     while 1:
 
         message = client.recv(2048).decode('utf-8')
@@ -100,13 +102,14 @@ def listen_for_messages_from_server(client):
             content = message.split('~')[1]
 
             add_message(f"[{username}] {content}")
-            
+
         else:
             messagebox.showerror("Error", "Message recevied from client is empty")
 
-def main():
 
+def main():
     root.mainloop()
-    
+
+
 if __name__ == '__main__':
     main()
